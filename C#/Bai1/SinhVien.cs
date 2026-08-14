@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,6 @@ namespace Bai1
 {
     public class SinhVien
     {
-        // Thuộc tính (Property)
         public string MaSV { get; set; }
         public string HoTen { get; set; }
         public DateTime NgaySinh { get; set; }
@@ -19,7 +18,6 @@ namespace Bai1
         public float DiemTB { get; set; }
         public string TrangThaiHT { get; set; }
 
-        // Constructor
         public SinhVien(string maSV, string hoTen, DateTime ngaySinh, string gioiTinh,
                         string email, string sDT, string nganhHoc, float diemTB, string trangThai)
         {
@@ -34,7 +32,6 @@ namespace Bai1
             TrangThaiHT = trangThai;
         }
 
-        // Phương thức hiển thị thông tin
         public void HienThiThongTin()
         {
             Console.WriteLine($"Ma SV: {MaSV}");
