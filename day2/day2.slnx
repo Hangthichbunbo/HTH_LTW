@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../day2MVC/day2MVC.csproj" />
+  <Project Path="day2.csproj" />
+</Solution>
