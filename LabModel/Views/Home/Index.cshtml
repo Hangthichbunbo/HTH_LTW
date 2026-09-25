@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LabModel.Models.User>
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h3>User Details</h3>
+
+@foreach (var u in Model)
+{
+    @u.name
+    <br />
+    @u.address
+    <br />
+    @u.email
+    <br />
+    <br />
+}

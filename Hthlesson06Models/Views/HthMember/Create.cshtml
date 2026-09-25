@@ -1,0 +1,48 @@
+@model Hthlesson06Models.Models.HthMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HthMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="HthMemberUserName" class="control-label"></label>
+                <input asp-for="HthMemberUserName" class="form-control" />
+                <span asp-validation-for="HthMemberUserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HthMemberPassword" class="control-label"></label>
+                <input asp-for="HthMemberPassword" class="form-control" />
+                <span asp-validation-for="HthMemberPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HthMemberEmail" class="control-label"></label>
+                <input asp-for="HthMemberEmail" class="form-control" />
+                <span asp-validation-for="HthMemberEmail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HthMemberFullName" class="control-label"></label>
+                <input asp-for="HthMemberFullName" class="form-control" />
+                <span asp-validation-for="HthMemberFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

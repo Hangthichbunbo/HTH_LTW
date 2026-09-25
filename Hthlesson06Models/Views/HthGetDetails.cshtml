@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Hthlesson06Models.Models.HthMember
+@{
+    ViewData["Title"] = "Thông tin chi tiết thành viên";
+    var hthMember = Model as Hthlesson06Models.Models.HthMember;
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Member ID: @Model.HthMemberId</p>
+<p>Username: @Model.HthMemberUserName</p>
+<p>Email: @Model.HthMemberEmail</p>
+<p>Full Name: @Model.HthMemberFullName</p>
