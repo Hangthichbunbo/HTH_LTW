@@ -1,0 +1,27 @@
+﻿@model NetCoreLA7.Models.Category
+
+@{
+    ViewData["Title"] = "Xóa danh mục";
+}
+
+<div class="card card-danger">
+    <div class="card-header">
+        <h3 class="card-title">Bạn có chắc chắn muốn xóa danh mục này?</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>ID:</strong> @Model.Id</p>
+        <p><strong>Tên danh mục:</strong> @Model.Name</p>
+        <p><strong>Ngày tạo:</strong> @Model.CreatedDate.ToString("dd/MM/yyyy")</p>
+    </div>
+    <div class="card-footer">
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i> Xác nhận xóa
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Hủy
+            </a>
+        </form>
+    </div>
+</div>

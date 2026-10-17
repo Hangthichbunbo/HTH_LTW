@@ -1,0 +1,47 @@
+﻿@model NetCoreLA7.Models.Category
+
+@{
+    ViewData["Title"] = "Chi tiết danh mục";
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Chi tiết Danh mục</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th style="width: 200px;">ID</th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th>Tên danh mục</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th>Trạng thái</th>
+                <td>@(Model.Status == 1 ? "Hiển thị" : "Tạm ẩn")</td>
+            </tr>
+            <tr>
+                <th>Ngày tạo</th>
+                <td>@Model.CreatedDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+            <tr>
+                <th>Hình ảnh</th>
+                <td>@Model.Image</td>
+            </tr>
+            <tr>
+                <th>Mô tả</th>
+                <td>@Model.Description</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Sửa
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Quay lại
+        </a>
+    </div>
+</div>
