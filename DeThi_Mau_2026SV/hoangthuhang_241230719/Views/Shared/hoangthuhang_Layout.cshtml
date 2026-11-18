@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="~/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <partial name="hoangthuhang_Header" />
+    <main>
+        @RenderBody()
+    </main>
+    <partial name="hoangthuhang_Footer" />
+    <script src="~/js/jquery.min.js"></script>"
+    <script src="~/js/main.js"></script>"
+    <script src="~/js/site.js"></script>"
+    <script>
+            $(document).ready(function () {
+                $('.menu-theloai').click(function (e) {
+                    e.preventDefault();
+                    var maTl = $(this).data('id');
+                    var tenTl = $(this).data('name');
+                    $(".menu-theloai").parent().removeClass("active");
+                    $(this).parent().addClass("active");
+                    $.ajax({
+                        url: '/Home/GetSachByTheLoai',
+                        type: 'GET',
+                        data: { maTl: maTl },
+                        success: function (response) {
+                            $('#tieu-de-nd').text(tenTl.toUpperCase());
+                            $('#khu-vuc-sach').html(response);
+                        },
+                        error: function () {
+                            alert('Đã xảy ra lỗi khi tải dữ liệu.');
+                        }
+                    });
+                });
+            });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

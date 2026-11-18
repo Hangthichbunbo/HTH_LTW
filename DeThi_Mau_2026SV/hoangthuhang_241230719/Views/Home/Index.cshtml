@@ -1,0 +1,13 @@
+﻿@model IEnumerable<hoangthuhang_241230719.Models.Sach>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="section-head">
+    <h3 id="tieu-de-nd">Hoang Thu Hang</h3>
+    <a href="@Url.Action("Create", "Home")">Xem tất cả &rsaquo;</a>
+</div>
+<div class="grid" id="khu-vuc-sach">
+    <partial name="_DanhSachSachPartial" model="Model" />
+</div>
