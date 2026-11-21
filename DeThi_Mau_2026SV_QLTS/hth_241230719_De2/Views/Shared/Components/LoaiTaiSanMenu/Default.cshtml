@@ -1,0 +1,12 @@
+﻿@model IEnumerable<hth_241230719_De1.Models.LoaiTaiSan>
+<ul class="menu">
+    <li class="active"><a href="javascript:void(0)" class="menu-loai" data-id="0">HOÀNG THU HẰNG</a></li>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="javascript:void(0)" class="menu-loai" data-id="@item.MaLoai">
+                @item.TenLoai.ToUpper()
+            </a>
+        </li>
+    }
+</ul>

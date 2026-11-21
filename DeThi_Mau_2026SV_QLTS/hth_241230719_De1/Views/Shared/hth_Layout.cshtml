@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetHub - Quản lý tài sản</title>
+    <link href="~/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    @await Html.PartialAsync("hth_Header")
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @await Html.PartialAsync("hth_Footer")
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js"></script> 
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.menu-loai', function (e) {
+                e.preventDefault();
+                $('.menu-loai').parent().removeClass('active');
+                $(this).parent().addClass('active');
+                var maLoai = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("LocTheoLoai", "Home")',
+                    type: 'GET',
+                    data: { maLoai: maLoai },
+                    success: function (response) {
+                        $('#main-content-area').html(response);
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>
