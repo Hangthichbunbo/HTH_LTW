@@ -1,0 +1,44 @@
+﻿@model HoangThuHang_241230719.Models.HangHoa
+
+<div class="main">
+    <div class="content" style="padding: 20px;">
+        <h3>Hoang Thu Hang</h3>
+        <h4>Thêm Hàng Hóa Mới</h4>
+        <hr />
+
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" style="color:red"></div>
+
+            <div style="margin-bottom: 12px;">
+                <label>MaLoai</label><br />
+                <select asp-for="MaLoai" asp-items="ViewBag.MaLoai"></select>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label>TenHang</label><br />
+                <input asp-for="TenHang" />
+                <span asp-validation-for="TenHang" style="color:red"></span>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label>Gia</label><br />
+                <input asp-for="Gia" />
+                <span asp-validation-for="Gia" style="color:red"></span>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label>Anh</label><br />
+                <input asp-for="Anh" />
+                <span asp-validation-for="Anh" style="color:red"></span>
+            </div>
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
